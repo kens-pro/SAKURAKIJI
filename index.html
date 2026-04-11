@@ -902,6 +902,132 @@
       .hero-h1 { font-size: 44px; }
       .products-grid { grid-template-columns: 1fr; }
     }
+    /* ─── GALLERY SECTION ───────────────────────────── */
+.gallery-section {
+  position: relative;
+  padding: clamp(80px, 10vw, 120px) 0;
+  background:
+    linear-gradient(to bottom, rgba(24,20,18,0.92), rgba(15,13,12,1));
+}
+
+.gallery-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 6vw, 80px);
+}
+
+.gallery-intro {
+  max-width: 760px;
+  margin-bottom: 56px;
+}
+
+.gallery-intro .sh-eyebrow {
+  margin-bottom: 14px;
+}
+
+.gallery-intro .sh-title {
+  margin-bottom: 18px;
+}
+
+.gallery-intro p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 2;
+  color: rgba(250,248,245,0.68);
+}
+
+.gallery-set {
+  margin-bottom: 72px;
+}
+
+.gallery-set:last-child {
+  margin-bottom: 0;
+}
+
+.gallery-set-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(250,248,245,0.08);
+}
+
+.gallery-set-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--c-white);
+}
+
+.gallery-set-sub {
+  font-size: 0.82rem;
+  color: rgba(250,248,245,0.45);
+  line-height: 1.8;
+  text-align: right;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 960px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-bg2);
+  border: 1px solid rgba(250,248,245,0.05);
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-silk), filter 0.5s var(--ease-silk);
+  filter: brightness(0.95) saturate(0.92);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.035);
+  filter: brightness(1) saturate(1);
+}
+
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 14px 16px;
+  background: linear-gradient(to top, rgba(15,13,12,0.92), rgba(15,13,12,0));
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: rgba(250,248,245,0.88);
+  letter-spacing: 0.03em;
+}
+
+.gallery-note {
+  margin-top: 18px;
+  font-size: 0.78rem;
+  color: rgba(250,248,245,0.38);
+  line-height: 1.8;
+}
   </style>
 </head>
 <body>
@@ -1125,6 +1251,111 @@
     </div>
   </section>
  
+    <!-- Additional Gallery -->
+  <section class="gallery-section">
+    <div class="gallery-wrap">
+
+      <div class="gallery-intro reveal">
+        <div class="sh-eyebrow">More Views</div>
+        <h2 class="sh-title">色の揺らぎを<br>もう少し詳しく見る</h2>
+        <p>
+          草木染めは、光の当たり方や折り方によっても表情が変わります。<br>
+          それぞれのセットを、もう少し近くでご覧いただけるよう追加写真をご用意しました。<br>
+          お好みの色合いや雰囲気を、ゆっくり見比べながらお選びください。
+        </p>
+      </div>
+
+      <!-- set 01 -->
+      <div class="gallery-set reveal">
+        <div class="gallery-set-head">
+          <div class="gallery-set-title">01｜桜・ヨモギ・月桂樹</div>
+          <div class="gallery-set-sub">
+            綿100% サラシ / 約33cm × 約70cm / 3枚セット
+          </div>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="images/set01_01.jpg" alt="01 桜・ヨモギ・月桂樹 追加写真1">
+            <figcaption class="gallery-caption">全体の色バランス</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/set01_02.jpg" alt="01 桜・ヨモギ・月桂樹 追加写真2">
+            <figcaption class="gallery-caption">やわらかな重なり</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/set01_03.jpg" alt="01 桜・ヨモギ・月桂樹 追加写真3">
+            <figcaption class="gallery-caption">質感と織り目の表情</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/set01_04.jpg" alt="01 桜・ヨモギ・月桂樹 追加写真4">
+            <figcaption class="gallery-caption">自然光で見た色の印象</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- set 02 -->
+      <div class="gallery-set reveal reveal-delay-1">
+        <div class="gallery-set-head">
+          <div class="gallery-set-title">02｜桜・桜・ヨモギ（濃）</div>
+          <div class="gallery-set-sub">
+            綿100% サラシ / 約33cm × 約70cm / 3枚セット
+          </div>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="images/set02_01.jpg" alt="02 桜・桜・ヨモギ（濃） 追加写真1">
+            <figcaption class="gallery-caption">セット全体の印象</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/set02_02.jpg" alt="02 桜・桜・ヨモギ（濃） 追加写真2">
+            <figcaption class="gallery-caption">濃淡の違いが分かる一枚</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/set02_03.jpg" alt="02 桜・桜・ヨモギ（濃） 追加写真3">
+            <figcaption class="gallery-caption">やさしい桜色の表情</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/set02_04.jpg" alt="02 桜・桜・ヨモギ（濃） 追加写真4">
+            <figcaption class="gallery-caption">手染めらしい揺らぎ</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- set 03 -->
+      <div class="gallery-set reveal reveal-delay-2">
+        <div class="gallery-set-head">
+          <div class="gallery-set-title">03｜桜・桜・ヨモギ（淡）</div>
+          <div class="gallery-set-sub">
+            綿100% サラシ / 約33cm × 約70cm / 3枚セット
+          </div>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="images/set03_01.jpg" alt="03 桜・桜・ヨモギ（淡） 追加写真1">
+            <figcaption class="gallery-caption">淡い色合いの全体像</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/set03_02.jpg" alt="03 桜・桜・ヨモギ（淡） 追加写真2">
+            <figcaption class="gallery-caption">重ねたときの印象</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/set03_03.jpg" alt="03 桜・桜・ヨモギ（淡） 追加写真3">
+            <figcaption class="gallery-caption">生地表面のやさしい表情</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/set03_04.jpg" alt="03 桜・桜・ヨモギ（淡） 追加写真4">
+            <figcaption class="gallery-caption">自然な色の移ろい</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <p class="gallery-note reveal">
+        ※ 写真はできるだけ実物に近い色合いになるよう撮影しておりますが、
+        ご覧の環境により見え方が異なる場合がございます。手染めならではの色むらや濃淡も、作品の個性としてお楽しみください。
+      </p>
+
+    </div>
+  </section>
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
