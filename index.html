@@ -1144,6 +1144,121 @@
       color: rgba(250,248,245,0.38);
       line-height: 1.8;
     }
+
+
+    /* ─── INSTAGRAM REEL SECTION ───────────────────── */
+    .reel-section {
+      position: relative;
+      z-index: 10;
+      padding: 0 0 clamp(80px, 10vw, 120px);
+    }
+
+    .reel-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 6vw, 80px);
+    }
+
+    .reel-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(280px, 420px) 1fr;
+      gap: clamp(28px, 4vw, 56px);
+      align-items: center;
+      padding: clamp(28px, 5vw, 56px);
+      background: linear-gradient(180deg, rgba(24,20,18,0.94) 0%, rgba(15,13,12,0.98) 100%);
+      border: 1px solid rgba(250,248,245,0.08);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.03);
+      overflow: hidden;
+    }
+
+    .reel-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(212,129,140,0.12), transparent 24%),
+        radial-gradient(circle at 88% 78%, rgba(201,168,108,0.10), transparent 26%);
+    }
+
+    .reel-media,
+    .reel-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .reel-media {
+      display: flex;
+      justify-content: center;
+    }
+
+    .reel-embed-shell {
+      width: 100%;
+      max-width: 380px;
+      padding: 12px;
+      background: rgba(250,248,245,0.03);
+      border: 1px solid rgba(250,248,245,0.08);
+    }
+
+    .instagram-media {
+      min-width: 100% !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .reel-eyebrow {
+      font-family: var(--font-latin);
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      margin-bottom: 18px;
+    }
+
+    .reel-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      color: var(--c-white);
+    }
+
+    .reel-title strong {
+      color: var(--c-sakura-lt);
+      font-weight: 700;
+    }
+
+    .reel-text {
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 2;
+      color: rgba(250,248,245,0.72);
+      margin-bottom: 18px;
+      max-width: 560px;
+    }
+
+    .reel-note {
+      font-size: 0.8rem;
+      color: rgba(250,248,245,0.42);
+      line-height: 1.9;
+    }
+
+    @media (max-width: 860px) {
+      .reel-card {
+        grid-template-columns: 1fr;
+      }
+
+      .reel-copy {
+        order: -1;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1228,6 +1343,26 @@
       <div class="care-deco-side reveal reveal-delay-2" aria-hidden="true">
         <div class="care-deco-num">染</div>
         <div class="care-deco-kanji">草木染め　一期一会</div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Instagram Reel -->
+  <section class="reel-section">
+    <div class="reel-wrap">
+      <div class="reel-card reveal">
+        <div class="reel-media">
+          <div class="reel-embed-shell">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DVzOWyGj_wC/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#0f0d0c; margin:0; width:100%;"></blockquote>
+          </div>
+        </div>
+        <div class="reel-copy">
+          <div class="reel-eyebrow">Behind the Dye</div>
+          <h2 class="reel-title">色むらも、揺らぎも、<br><strong>手染めの時間から生まれています。</strong></h2>
+          <p class="reel-text">草木染めは、均一な工業染色とは違い、その日の素材や火加減、染液の状態によって表情が変わります。こちらのリールでは、実際に染めている様子をご覧いただけます。</p>
+          <p class="reel-text">「なぜ色に個体差があるのか」「なぜ同じものが二度とできないのか」。その理由ごと受け取っていただける方に、選んでいただけたら嬉しいです。</p>
+          <p class="reel-note">※ Instagramの表示形式により、読み込みに少し時間がかかる場合があります。</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1531,5 +1666,7 @@
     }, { passive: true });
   </script>
  
+  <script async src="https://www.instagram.com/embed.js"></script>
+
 </body>
 </html>
