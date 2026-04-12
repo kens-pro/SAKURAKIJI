@@ -479,25 +479,94 @@
       max-width: 560px;
       margin-bottom: 36px;
     }
-    .bonus-patterns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .pattern-pill {
-      padding: 6px 16px;
-      border: 1px solid rgba(250,248,245,0.1);
-      border-radius: 1px;
-      font-family: var(--font-serif);
-      font-size: 0.8rem;
-      color: rgba(250,248,245,0.55);
-      letter-spacing: 0.05em;
-      transition: all 0.3s;
-    }
-    .pattern-pill:hover {
-      border-color: var(--c-sakura);
-      color: var(--c-sakura-lt);
-    }
+   .bonus-patterns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.pattern-pill {
+  padding: 6px 16px;
+  border: 1px solid rgba(250,248,245,0.1);
+  border-radius: 1px;
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  color: rgba(250,248,245,0.55);
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+}
+
+.pattern-pill:hover {
+  border-color: var(--c-sakura);
+  color: var(--c-sakura-lt);
+}
+
+.bonus-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.bonus-preview-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bonus-preview-circle {
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201,168,108,0.35);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(212,129,140,0.10), rgba(255,255,255,0.02));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  color: rgba(250,248,245,0.45);
+  letter-spacing: 0.05em;
+  overflow: hidden;
+}
+
+.bonus-preview-label {
+  margin-top: 12px;
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(250,248,245,0.78);
+}
+
+@media (max-width: 980px) {
+  .bonus-preview-grid {
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .bonus-preview-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    gap: 18px 14px;
+  }
+
+  .bonus-preview-circle {
+    width: 110px;
+  }
+}
+
+@media (max-width: 420px) {
+  .bonus-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bonus-preview-circle {
+    width: 120px;
+  }
+}
  
     /* ─── SECTION HEADER ─────────────────────────────── */
     .section-header {
@@ -1119,29 +1188,47 @@
   <div class="divider"><hr></div>
  
   <!-- Bonus -->
-  <section>
-    <div class="bonus-section reveal">
-      <div class="bonus-card">
-        <div class="bonus-badge">Purchase Privilege</div>
-        <h2 class="bonus-title">特別プレゼント：<span>刺し子下図データ 12種</span></h2>
-        <p class="bonus-desc">ご購入者様全員に、刺し子どり亭主厳選の「12種類のトレース用下図データ（PDF）」を差し上げます。そのまま印刷して、草木染めの生地にすぐお使いいただけます。</p>
-        <div class="bonus-patterns">
-          <div class="pattern-pill">一目千網</div>
-          <div class="pattern-pill">丸毘沙門</div>
-          <div class="pattern-pill">三つ葉</div>
-          <div class="pattern-pill">鳥襷</div>
-          <div class="pattern-pill">半丸つなぎ</div>
-          <div class="pattern-pill">峰の上重ね</div>
-          <div class="pattern-pill">雷文</div>
-          <div class="pattern-pill">六つ手籠目</div>
-          <div class="pattern-pill">流れ卍</div>
-          <div class="pattern-pill">角七宝</div>
-          <div class="pattern-pill">向かい亀甲</div>
-          <div class="pattern-pill">丸七宝</div>
+  <!-- Bonus -->
+<section>
+  <div class="bonus-section reveal">
+    <div class="bonus-card">
+      <div class="bonus-badge">Purchase Privilege</div>
+      <h2 class="bonus-title">特別プレゼント：<span>刺し子下図データ 5種</span></h2>
+      <p class="bonus-desc">ご購入者様全員に、刺し子どり亭主厳選の「5種類のトレース用下図データ（PDF）」を差し上げます。そのまま印刷して、草木染めの生地にすぐお使いいただけます。</p>
+
+      <div class="bonus-patterns">
+        <div class="pattern-pill">角十つなぎ</div>
+        <div class="pattern-pill">野分</div>
+        <div class="pattern-pill">六手籠目二重</div>
+        <div class="pattern-pill">組菱</div>
+        <div class="pattern-pill">鳥襷</div>
+      </div>
+
+      <div class="bonus-preview-grid">
+        <div class="bonus-preview-item">
+          <div class="bonus-preview-circle">画像①</div>
+          <div class="bonus-preview-label">角十つなぎ</div>
+        </div>
+        <div class="bonus-preview-item">
+          <div class="bonus-preview-circle">画像②</div>
+          <div class="bonus-preview-label">野分</div>
+        </div>
+        <div class="bonus-preview-item">
+          <div class="bonus-preview-circle">画像③</div>
+          <div class="bonus-preview-label">六手籠目二重</div>
+        </div>
+        <div class="bonus-preview-item">
+          <div class="bonus-preview-circle">画像④</div>
+          <div class="bonus-preview-label">組菱</div>
+        </div>
+        <div class="bonus-preview-item">
+          <div class="bonus-preview-circle">画像⑤</div>
+          <div class="bonus-preview-label">鳥襷</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
  
   <!-- Products -->
   <section id="sets">
